@@ -1,29 +1,26 @@
+import { calculate } from './actions';
+
 const initialState = {
-    contactsTitle: '',
-    counter: 0,
-  };
-  
-  const reducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'UPDATE_CONTACTS_TITLE':
-        return {
-          ...state,
-          contactsTitle: action.payload,
-        };
-      case 'INCREMENT_COUNTER':
-        return {
-          ...state,
-          counter: state.counter + 1,
-        };
-      case 'DECREMENT_COUNTER':
-        return {
-          ...state,
-          counter: state.counter - 1,
-        };
-      default:
-        return state;
-    }
-  };
-  
-  export default reducer;
-  
+  result: null,
+  error: null,
+};
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'CALCULATE':
+      return {
+        ...state,
+        result: action.payload.result,
+        error: null,
+      };
+    case 'ERROR':
+      return {
+        ...state,
+        error: action.payload.error,
+      };
+    default:
+      return state;
+  }
+};
+
+export default reducer;
