@@ -1,19 +1,14 @@
-export const updateContactsTitle = (title) => {
-    return {
-      type: 'UPDATE_CONTACTS_TITLE',
-      payload: title,
-    };
-  };
-  
-  export const incrementCounter = () => {
-    return {
-      type: 'INCREMENT_COUNTER',
-    };
-  };
-  
-  export const decrementCounter = () => {
-    return {
-      type: 'DECREMENT_COUNTER',
-    };
-  };
-  
+export const calculate = (operator, num1, num2) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    case '/':
+      return num1 / num2;
+    default:
+      return 0;
+  }
+};
